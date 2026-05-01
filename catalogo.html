@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Districarnes El Ganadero CV — Agua de Dios, Cundinamarca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rojo:      #C0000C;
+      --rojo-osc:  #8B0000;
+      --rojo-cl:   #FFF0F0;
+      --negro:     #170808;
+      --gris:      #F6F1EF;
+      --gris-md:   #E0D5D0;
+      --blanco:    #FFFFFF;
+      --texto:     #2C1A1A;
+      --playfair:  'Playfair Display', Georgia, serif;
+      --dm:        'DM Sans', sans-serif;
+      --sombra:    0 2px 18px rgba(192,0,12,.10);
+      --sombra-lg: 0 8px 36px rgba(192,0,12,.18);
+      --radio:     10px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--dm); background: var(--gris); color: var(--texto); min-height: 100vh; overflow-x: hidden; }
+
+    /* HEADER */
+    header { background: var(--negro); color: var(--blanco); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 24px rgba(0,0,0,.5); }
+    .header-inner { max-width: 1300px; margin: auto; padding: 0 16px; display: flex; align-items: center; gap: 12px; height: 62px; }
+    .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .logo-icon { width: 40px; height: 40px; background: var(--rojo); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .logo-text { line-height: 1.2; }
+    .logo-title { font-family: var(--playfair); font-size: 13px; font-weight: 900; color: var(--blanco); letter-spacing: .4px; }
+    .logo-sub { font-size: 9px; color: #999; text-transform: uppercase; letter-spacing: 1.8px; }
+    .search-wrap { flex: 1; min-width: 0; max-width: 440px; position: relative; }
+    .search-wrap input { width: 100%; padding: 9px 14px 9px 38px; border: 1px solid #3a1515; border-radius: 30px; background: #261010; color: var(--blanco); font-family: var(--dm); font-size: 13px; outline: none; transition: border .2s; }
+    .search-wrap input::placeholder { color: #777; }
+    .search-wrap input:focus { border-color: var(--rojo); }
+    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #777; font-size: 14px; pointer-events: none; }
+    .cart-btn { margin-left: auto; background: var(--rojo); color: var(--blanco); border: none; border-radius: 30px; padding: 8px 14px; font-family: var(--dm); font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background .2s, transform .1s; flex-shrink: 0; white-space: nowrap; }
+    .cart-btn:hover { background: var(--rojo-osc); }
+    .cart-btn:active { transform: scale(.97); }
+    .cart-badge { background: var(--blanco); color: var(--rojo); font-size: 11px; font-weight: 700; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; transition: transform .3s cubic-bezier(.34,1.56,.64,1); flex-shrink: 0; }
+    .cart-badge.bump { transform: scale(1.45); }
+
+    /* HERO */
+    .hero { background: var(--negro); color: var(--blanco); padding: 40px 20px 36px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(192,0,12,.4), transparent); pointer-events: none; }
+    .hero::after { content: '🐂'; position: absolute; right: 4%; bottom: -8px; font-size: clamp(80px,12vw,120px); opacity: .06; pointer-events: none; line-height: 1; }
+    .hero-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(192,0,12,.25); border: 1px solid rgba(192,0,12,.4); color: #ffd0d0; font-size: 10px; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase; padding: 5px 12px; border-radius: 30px; }
+    .hero h1 { font-family: var(--playfair); font-size: clamp(1.7rem,5vw,3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+    .hero h1 span { color: var(--rojo); }
+    .hero p { color: #bbb; font-size: 13px; max-width: 420px; margin: 0 auto 12px; font-style: italic; }
+    .hero-info { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-size: 11.5px; color: #999; }
+    .hero-info a { color: #ccc; text-decoration: none; transition: color .2s; }
+    .hero-info a:hover { color: var(--rojo); }
+
+    /* INFO BAR */
+    .info-bar { background: #1f0d0d; border-top: 1px solid #3a1515; border-bottom: 1px solid #3a1515; }
+    .info-bar-inner { max-width: 1300px; margin: auto; padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: center; font-size: 12px; color: #ccc; }
+    .info-chip { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .info-chip strong { color: var(--blanco); }
+    .pay-icons { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; }
+    .pay-pill { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: var(--blanco); display: flex; align-items: center; gap: 5px; }
+    .pay-pill.nequi { border-color: #7b2fff; color: #c39fff; }
+    .pay-pill.daviplata { border-color: #ff6900; color: #ffb47a; }
+    .pay-pill.efectivo { border-color: #25D366; color: #7ee8a2; }
+
+    /* DOMICILIO BANNER */
+    .domicilio-banner { background: linear-gradient(90deg, #0d1f0d 0%, #162416 100%); border-bottom: 1px solid #25D36630; }
+    .domicilio-inner { max-width: 1300px; margin: auto; padding: 9px 20px; display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; font-size: 12px; color: #a0e8b0; }
+    .domicilio-inner strong { color: #7ee8a2; }
+    .domicilio-inner .dom-sep { color: #2d4d2d; }
+
+    /* LAYOUT */
+    .main-wrap { max-width: 1300px; margin: 0 auto; padding: 24px 16px 100px; display: grid; grid-template-columns: 210px 1fr; gap: 22px; align-items: start; }
+
+    /* SIDEBAR */
+    .sidebar { background: var(--blanco); border-radius: var(--radio); padding: 16px 12px; box-shadow: var(--sombra); position: sticky; top: 74px; }
+    .sidebar-title { font-family: var(--playfair); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rojo); margin-bottom: 10px; padding: 0 4px; }
+    .cat-btn { display: flex; align-items: center; gap: 8px; width: 100%; padding: 7px 9px; border: none; background: transparent; border-radius: 7px; cursor: pointer; font-family: var(--dm); font-size: 12.5px; color: var(--texto); text-align: left; transition: background .15s, color .15s; margin-bottom: 2px; }
+    .cat-btn:hover { background: var(--rojo-cl); color: var(--rojo); }
+    .cat-btn.active { background: var(--rojo); color: var(--blanco); font-weight: 600; }
+    .cat-btn .ce { font-size: 14px; line-height: 1; flex-shrink: 0; }
+    .cat-count { margin-left: auto; font-size: 10px; font-weight: 600; background: rgba(0,0,0,.07); padding: 2px 6px; border-radius: 20px; }
+    .cat-btn.active .cat-count { background: rgba(255,255,255,.2); }
+    .sdiv { height: 1px; background: var(--gris); margin: 7px 0; }
+
+    /* CATALOG */
+    .catalog-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 6px; }
+    .catalog-header h2 { font-family: var(--playfair); font-size: 20px; font-weight: 900; }
+    .result-count { font-size: 12px; color: #999; }
+    .unit-toggle { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 13px; color: #888; flex-wrap: wrap; }
+    .unit-toggle strong { color: var(--texto); }
+    .toggle-btns { display: flex; border: 1px solid var(--gris-md); border-radius: 8px; overflow: hidden; }
+    .toggle-btn { padding: 6px 13px; border: none; background: transparent; font-family: var(--dm); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .15s, color .15s; color: #888; }
+    .toggle-btn.active { background: var(--rojo); color: var(--blanco); }
+    .section-label { display: flex; align-items: center; gap: 10px; margin: 24px 0 12px; font-family: var(--playfair); font-size: 14px; font-weight: 700; color: var(--rojo); }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--gris-md); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 13px; }
+
+    /* CARD */
+    .card { background: var(--blanco); border-radius: var(--radio); box-shadow: var(--sombra); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; animation: fadeUp .28s ease both; }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--sombra-lg); }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    .card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #2a0808; }
+    .card-img-placeholder { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, #1a0000 0%, #3a0808 100%); display: flex; align-items: center; justify-content: center; }
+    .card-img-placeholder.gold { background: linear-gradient(135deg, #1a1500 0%, #2a2000 100%); }
+    .card-img-placeholder .card-emoji { font-size: 42px; line-height: 1; }
+    .card-cat-tag { position: absolute; top: 8px; left: 8px; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blanco); background: rgba(0,0,0,.55); backdrop-filter: blur(4px); padding: 3px 8px; border-radius: 20px; }
+    .card-top-wrap { position: relative; }
+    .card-body { padding: 11px 13px; flex: 1; display: flex; flex-direction: column; }
+    .card-name { font-family: var(--playfair); font-size: 13.5px; font-weight: 700; line-height: 1.25; margin-bottom: 4px; color: var(--negro); }
+    .card-price { font-size: 16px; font-weight: 700; color: var(--rojo); margin-bottom: 9px; }
+    .card-price span { font-size: 11px; font-weight: 400; color: #999; }
+    .qty-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+    .qty-btn { width: 27px; height: 27px; border: 1px solid var(--gris-md); border-radius: 6px; background: var(--gris); font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s, border-color .15s; flex-shrink: 0; }
+    .qty-btn:hover { background: var(--rojo-cl); border-color: var(--rojo); color: var(--rojo); }
+    .qty-input { flex: 1; min-width: 0; text-align: center; padding: 5px 2px; border: 1px solid var(--gris-md); border-radius: 6px; font-family: var(--dm); font-size: 13px; font-weight: 600; color: var(--texto); background: var(--blanco); outline: none; }
+    .qty-input:focus { border-color: var(--rojo); }
+    .qty-unit { font-size: 11px; color: #aaa; font-weight: 500; flex-shrink: 0; }
+    .add-btn { width: 100%; padding: 8px; background: var(--rojo); color: var(--blanco); border: none; border-radius: 7px; font-family: var(--dm); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .15s, transform .1s; margin-top: auto; }
+    .add-btn:hover { background: var(--rojo-osc); }
+    .add-btn:active { transform: scale(.97); }
+    .add-btn.in-cart { background: #186e18; }
+
+    /* COMBOS */
+    .combo-grid { display: grid; gap: 11px; }
+    .combo-card { background: linear-gradient(135deg, var(--negro) 0%, #2a0606 100%); color: var(--blanco); border-radius: var(--radio); padding: 16px 18px; display: flex; align-items: center; gap: 14px; box-shadow: var(--sombra); animation: fadeUp .28s ease both; transition: transform .2s; }
+    .combo-card:hover { transform: translateY(-2px); }
+    .combo-icon { font-size: 30px; flex-shrink: 0; }
+    .combo-info { flex: 1; min-width: 0; }
+    .combo-name { font-family: var(--playfair); font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .combo-desc { font-size: 11px; color: #bbb; line-height: 1.4; }
+    .combo-price { font-size: 19px; font-weight: 700; color: #ffd700; white-space: nowrap; flex-shrink: 0; }
+    .combo-add { padding: 8px 13px; background: var(--rojo); color: var(--blanco); border: none; border-radius: 7px; font-family: var(--dm); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .15s; flex-shrink: 0; }
+    .combo-add:hover { background: var(--rojo-osc); }
+    .combo-add.in-cart { background: #186e18; }
+    .no-results { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: #bbb; }
+    .no-results .ni { font-size: 48px; margin-bottom: 12px; }
+
+    /* DRAWER */
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 200; opacity: 0; pointer-events: none; transition: opacity .3s; }
+    .overlay.open { opacity: 1; pointer-events: all; }
+    .cart-drawer { position: fixed; right: 0; top: 0; bottom: 0; width: min(420px,100vw); background: var(--blanco); z-index: 201; transform: translateX(100%); transition: transform .35s cubic-bezier(.25,.46,.45,.94); display: flex; flex-direction: column; box-shadow: -8px 0 40px rgba(0,0,0,.2); }
+    .cart-drawer.open { transform: translateX(0); }
+    .drawer-head { background: var(--negro); color: var(--blanco); padding: 16px 20px; display: flex; align-items: center; gap: 10px; }
+    .drawer-head h2 { font-family: var(--playfair); font-size: 16px; font-weight: 700; flex: 1; }
+    .drawer-close { background: transparent; border: none; color: #999; font-size: 22px; cursor: pointer; padding: 3px 6px; transition: color .15s; }
+    .drawer-close:hover { color: var(--blanco); }
+    .drawer-items { flex: 1; overflow-y: auto; padding: 12px 14px; }
+    .empty-cart { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #ccc; gap: 10px; font-size: 14px; text-align: center; }
+    .empty-cart .big-i { font-size: 52px; }
+    .cart-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gris); animation: fadeUp .2s ease; }
+    .ci-emoji { font-size: 22px; line-height: 1; margin-top: 2px; }
+    .ci-info { flex: 1; min-width: 0; }
+    .ci-name { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+    .ci-detail { font-size: 11px; color: #999; }
+    .ci-sub { font-weight: 700; color: var(--rojo); font-size: 13px; white-space: nowrap; flex-shrink: 0; }
+    .ci-rm { background: transparent; border: none; cursor: pointer; color: #ddd; font-size: 17px; padding: 2px 4px; transition: color .15s; }
+    .ci-rm:hover { color: var(--rojo); }
+    .drawer-note { padding: 10px 14px; }
+    .drawer-note label { font-size: 11px; font-weight: 600; color: #888; display: block; margin-bottom: 5px; letter-spacing: .5px; text-transform: uppercase; }
+    .drawer-note input { width: 100%; padding: 8px 10px; border: 1px solid var(--gris-md); border-radius: 8px; font-family: var(--dm); font-size: 13px; outline: none; }
+    .drawer-note input:focus { border-color: var(--rojo); }
+    .drawer-footer { padding: 12px 16px; border-top: 2px solid var(--gris); background: var(--gris); }
+    .total-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .total-label { font-size: 12px; color: #888; }
+    .total-amount { font-family: var(--playfair); font-size: 22px; font-weight: 900; color: var(--rojo); }
+    .domicilio-note { font-size: 11px; color: #27ae60; margin-bottom: 10px; font-style: italic; }
+    .wa-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background: #25D366; color: var(--blanco); border: none; border-radius: var(--radio); font-family: var(--dm); font-size: 14px; font-weight: 700; cursor: pointer; transition: background .15s, transform .1s; }
+    .wa-btn:hover { background: #1da852; }
+    .wa-btn:active { transform: scale(.98); }
+    .wa-btn svg { width: 19px; height: 19px; fill: var(--blanco); }
+    .clear-btn { display: block; width: 100%; margin-top: 6px; padding: 7px; background: transparent; border: 1px solid var(--gris-md); border-radius: 7px; font-family: var(--dm); font-size: 12px; color: #bbb; cursor: pointer; transition: color .15s, border-color .15s; }
+    .clear-btn:hover { color: var(--rojo); border-color: var(--rojo); }
+
+    /* FLOATING WA BUTTON */
+    .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 150; background: #25D366; border: none; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(37,211,102,.45); transition: transform .2s, box-shadow .2s; }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.6); }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+    .wa-float-tooltip { position: absolute; right: 66px; background: var(--negro); color: var(--blanco); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .wa-float:hover .wa-float-tooltip { opacity: 1; }
+
+    /* ADMIN MODAL */
+    .admin-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.75); z-index: 500; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .admin-overlay.open { display: flex; }
+    .admin-modal { background: var(--blanco); border-radius: 14px; width: 100%; max-width: 680px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .admin-head { background: var(--negro); color: var(--blanco); padding: 18px 22px; border-radius: 14px 14px 0 0; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1; }
+    .admin-head h2 { font-family: var(--playfair); font-size: 18px; font-weight: 700; }
+    .admin-close { background: transparent; border: none; color: #999; font-size: 22px; cursor: pointer; }
+    .admin-close:hover { color: var(--blanco); }
+    .admin-body { padding: 22px; }
+    .admin-section { margin-bottom: 26px; }
+    .admin-section h3 { font-family: var(--playfair); font-size: 14px; font-weight: 700; color: var(--rojo); margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--gris-md); }
+    .admin-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; padding: 10px 12px; background: var(--gris); border-radius: 8px; }
+    .admin-row-label { flex: 1; font-size: 13px; font-weight: 600; min-width: 0; }
+    .admin-row-sub { font-size: 11px; color: #999; font-weight: 400; display: block; }
+    .admin-price-input { width: 120px; padding: 7px 10px; border: 1px solid var(--gris-md); border-radius: 7px; font-family: var(--dm); font-size: 13px; font-weight: 600; text-align: right; outline: none; flex-shrink: 0; }
+    .admin-price-input:focus { border-color: var(--rojo); }
+    .admin-price-unit { font-size: 11px; color: #888; flex-shrink: 0; }
+    .admin-text-input { width: 100%; padding: 8px 12px; border: 1px solid var(--gris-md); border-radius: 8px; font-family: var(--dm); font-size: 13px; outline: none; }
+    .admin-text-input:focus { border-color: var(--rojo); }
+    .admin-label-sm { font-size: 11px; font-weight: 600; color: #888; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+    .admin-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .admin-save-btn { width: 100%; padding: 12px; background: var(--rojo); color: var(--blanco); border: none; border-radius: 9px; font-family: var(--dm); font-size: 14px; font-weight: 700; cursor: pointer; transition: background .15s; margin-top: 6px; }
+    .admin-save-btn:hover { background: var(--rojo-osc); }
+    .admin-saved-msg { text-align: center; font-size: 12px; color: #186e18; margin-top: 8px; font-weight: 600; display: none; }
+
+    /* LOGIN MODAL */
+    .login-modal { background: var(--blanco); border-radius: 14px; width: 100%; max-width: 360px; padding: 36px 30px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .login-modal h2 { font-family: var(--playfair); font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+    .login-modal p { font-size: 13px; color: #888; margin-bottom: 22px; }
+    .login-modal input { width: 100%; padding: 10px 14px; border: 1px solid var(--gris-md); border-radius: 9px; font-family: var(--dm); font-size: 14px; outline: none; margin-bottom: 12px; letter-spacing: 3px; text-align: center; }
+    .login-modal input:focus { border-color: var(--rojo); }
+    .login-btn { width: 100%; padding: 11px; background: var(--rojo); color: var(--blanco); border: none; border-radius: 9px; font-family: var(--dm); font-size: 14px; font-weight: 700; cursor: pointer; }
+    .login-btn:hover { background: var(--rojo-osc); }
+    .login-err { font-size: 12px; color: var(--rojo); margin-top: 8px; display: none; }
+
+    /* ADMIN TRIGGER (small link en footer) */
+    .admin-link { cursor: pointer; opacity: .4; font-size: 11px; text-decoration: underline dotted; transition: opacity .2s; }
+    .admin-link:hover { opacity: 1; }
+
+    /* FOOTER */
+    footer { background: var(--negro); color: #777; text-align: center; padding: 28px 20px; font-size: 12px; line-height: 1.9; }
+    footer strong { color: var(--blanco); }
+    footer .red { color: var(--rojo); }
+    footer a { color: #aaa; text-decoration: none; }
+    footer a:hover { color: var(--rojo); }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .sidebar { position: static; display: flex; flex-wrap: wrap; gap: 5px; padding: 10px; }
+      .sidebar-title, .sdiv { width: 100%; }
+      .cat-btn { width: auto; flex: 0 0 auto; padding: 6px 9px; font-size: 12px; }
+      .cat-count { display: none; }
+    }
+    @media (max-width: 620px) {
+      .header-inner { gap: 8px; padding: 0 10px; }
+      .logo-sub { display: none; }
+      .search-wrap { max-width: none; }
+      .product-grid { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 10px; }
+      .combo-card { flex-wrap: wrap; gap: 10px; }
+      .admin-grid2 { grid-template-columns: 1fr; }
+      .info-bar-inner { gap: 8px 16px; }
+      .wa-float { bottom: 18px; right: 14px; width: 50px; height: 50px; }
+      .wa-float svg { width: 24px; height: 24px; }
+    }
+    @media (max-width: 400px) {
+      .cart-btn span:not(.cart-badge) { display: none; }
+      .cart-btn { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="header-inner">
+    <a class="logo-area" href="#">
+      <div class="logo-icon">🐂</div>
+      <div class="logo-text">
+        <div class="logo-title">El Ganadero CV</div>
+        <div class="logo-sub">Districarnes · Agua de Dios</div>
+      </div>
+    </a>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="searchInput" placeholder="Buscar: lomo, hígado, panceta…" autocomplete="off" />
+    </div>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 <span>Mi pedido</span>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-badges">
+    <span class="hero-badge">🚚 Servicio a domicilio</span>
+    <span class="hero-badge">🌿 Nutrición celular · Proteínas &amp; Aminoácidos</span>
+    <span class="hero-badge">🕐 Pedidos 7 AM – 6 PM todos los días</span>
+  </div>
+  <h1>Carnes frescas<br><span>de primera calidad</span></h1>
+  <p>Catálogo mayorista y minorista. Elige tu corte, indica kilos o libras y envía tu pedido directo por WhatsApp.</p>
+  <div class="hero-info">
+    <span>📍 Cra. 9a #1210, Agua de Dios, Cundinamarca</span>
+    <a href="tel:3103305527">📞 310 330 5527</a>
+    <a href="tel:3105518837">📞 310 551 8837</a>
+  </div>
+</section>
+
+<!-- ═══════════════ INFO BAR ═══════════════ -->
+<div class="info-bar">
+  <div class="info-bar-inner">
+    <div class="info-chip">💳 <strong>Métodos de pago:</strong></div>
+    <div class="pay-icons">
+      <span class="pay-pill nequi">💜 Nequi</span>
+      <span class="pay-pill daviplata">🟠 Daviplata</span>
+      <span class="pay-pill efectivo">💵 Efectivo</span>
+    </div>
+    <div class="info-chip" style="color:#777">·</div>
+    <div class="info-chip">🕐 <strong>Horario:</strong> Lun–Dom 7:00 AM – 6:00 PM</div>
+  </div>
+</div>
+
+<!-- ═══════════════ DOMICILIO BANNER ═══════════════ -->
+<div class="domicilio-banner">
+  <div class="domicilio-inner" id="domicilioBanner">
+    <!-- Se rellena desde JS con el valor editable -->
+  </div>
+</div>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<div class="main-wrap">
+  <aside class="sidebar">
+    <div class="sidebar-title">Categorías</div>
+    <button class="cat-btn active" data-cat="all" onclick="filterCat(this,'all')">
+      <span class="ce">🔎</span> Todo el catálogo <span class="cat-count" id="cnt-all">0</span>
+    </button>
+    <div class="sdiv"></div>
+    <button class="cat-btn" data-cat="res-fino" onclick="filterCat(this,'res-fino')">
+      <span class="ce">🥩</span> Res — Cortes Finos <span class="cat-count" id="cnt-res-fino">0</span>
+    </button>
+    <button class="cat-btn" data-cat="res-primera" onclick="filterCat(this,'res-primera')">
+      <span class="ce">🍖</span> Res — Primeros Cortes <span class="cat-count" id="cnt-res-primera">0</span>
+    </button>
+    <button class="cat-btn" data-cat="res-segunda" onclick="filterCat(this,'res-segunda')">
+      <span class="ce">🍖</span> Res — Segundos Cortes <span class="cat-count" id="cnt-res-segunda">0</span>
+    </button>
+    <div class="sdiv"></div>
+    <button class="cat-btn" data-cat="huesos-res" onclick="filterCat(this,'huesos-res')">
+      <span class="ce">🦴</span> Huesos de Res <span class="cat-count" id="cnt-huesos-res">0</span>
+    </button>
+    <button class="cat-btn" data-cat="visceras-rojas" onclick="filterCat(this,'visceras-rojas')">
+      <span class="ce">❤️</span> Vísceras Rojas <span class="cat-count" id="cnt-visceras-rojas">0</span>
+    </button>
+    <button class="cat-btn" data-cat="visceras-blancas" onclick="filterCat(this,'visceras-blancas')">
+      <span class="ce">🫀</span> Vísceras Blancas <span class="cat-count" id="cnt-visceras-blancas">0</span>
+    </button>
+    <div class="sdiv"></div>
+    <button class="cat-btn" data-cat="cerdo-canal" onclick="filterCat(this,'cerdo-canal')">
+      <span class="ce">🐷</span> Cerdo en Canal <span class="cat-count" id="cnt-cerdo-canal">0</span>
+    </button>
+    <button class="cat-btn" data-cat="cerdo-piel" onclick="filterCat(this,'cerdo-piel')">
+      <span class="ce">🐷</span> Cerdo con Piel <span class="cat-count" id="cnt-cerdo-piel">0</span>
+    </button>
+    <button class="cat-btn" data-cat="cerdo-des" onclick="filterCat(this,'cerdo-des')">
+      <span class="ce">🐷</span> Cerdo Deshuesado <span class="cat-count" id="cnt-cerdo-des">0</span>
+    </button>
+    <button class="cat-btn" data-cat="cerdo-sinpiel" onclick="filterCat(this,'cerdo-sinpiel')">
+      <span class="ce">🐷</span> Cerdo sin Piel <span class="cat-count" id="cnt-cerdo-sinpiel">0</span>
+    </button>
+    <button class="cat-btn" data-cat="cerdo-huesos" onclick="filterCat(this,'cerdo-huesos')">
+      <span class="ce">🦴</span> Huesos de Cerdo <span class="cat-count" id="cnt-cerdo-huesos">0</span>
+    </button>
+    <button class="cat-btn" data-cat="cerdo-tocinos" onclick="filterCat(this,'cerdo-tocinos')">
+      <span class="ce">🥓</span> Tocinos y Pancetas <span class="cat-count" id="cnt-cerdo-tocinos">0</span>
+    </button>
+    <div class="sdiv"></div>
+    <button class="cat-btn" data-cat="combo" onclick="filterCat(this,'combo')">
+      <span class="ce">📦</span> Combos Mayoristas <span class="cat-count" id="cnt-combo">0</span>
+    </button>
+  </aside>
+
+  <main>
+    <div class="catalog-header">
+      <h2 id="catTitle">Todo el catálogo</h2>
+      <span class="result-count" id="resultCount"></span>
+    </div>
+    <div class="unit-toggle">
+      <strong>Unidad:</strong>
+      <div class="toggle-btns">
+        <button class="toggle-btn active" id="btnKg" onclick="setUnit('kg')">Kilogramo (kg)</button>
+        <button class="toggle-btn" id="btnLb" onclick="setUnit('lb')">Libra (lb)</button>
+      </div>
+    </div>
+    <div id="catalogContent"></div>
+  </main>
+</div>
+
+<!-- ═══════════════ OVERLAY + DRAWER ═══════════════ -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <span>🛒</span>
+    <h2>Mi Pedido</h2>
+    <button class="drawer-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-note">
+    <label>Tu nombre o negocio (opcional)</label>
+    <input type="text" id="customerName" placeholder="Ej: Restaurante El Buen Sabor" />
+  </div>
+  <div class="drawer-footer">
+    <div class="total-row">
+      <span class="total-label">Total estimado:</span>
+      <span class="total-amount" id="totalAmount">$0</span>
+    </div>
+    <div class="domicilio-note" id="domicilioNote"></div>
+    <button class="wa-btn" onclick="sendWhatsApp()">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar pedido por WhatsApp
+    </button>
+    <button class="clear-btn" onclick="clearCart()">🗑 Vaciar pedido</button>
+  </div>
+</div>
+
+<!-- ═══════════════ FLOATING WA BUTTON ═══════════════ -->
+<button class="wa-float" onclick="openWaConsulta()" title="Consulta rápida por WhatsApp">
+  <span class="wa-float-tooltip">¿Tienes dudas? ¡Escríbenos!</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<!-- ═══════════════ ADMIN LOGIN ═══════════════ -->
+<div class="admin-overlay" id="adminLoginOverlay">
+  <div class="login-modal">
+    <div style="font-size:36px;margin-bottom:10px;">🔐</div>
+    <h2>Panel de Administración</h2>
+    <p>Ingresa la contraseña para editar precios y configuración del catálogo.</p>
+    <input type="password" id="adminPassInput" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPass()" />
+    <button class="login-btn" onclick="checkPass()">Ingresar</button>
+    <div class="login-err" id="loginErr">Contraseña incorrecta. Intenta de nuevo.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ ADMIN PANEL ═══════════════ -->
+<div class="admin-overlay" id="adminPanelOverlay">
+  <div class="admin-modal">
+    <div class="admin-head">
+      <h2>⚙️ Panel de Administración</h2>
+      <button class="admin-close" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="admin-body">
+
+      <!-- Sección: Domicilio & Horario -->
+      <div class="admin-section">
+        <h3>🚚 Domicilio y Horario</h3>
+        <div style="margin-bottom:12px;">
+          <label class="admin-label-sm">Texto del banner de domicilio</label>
+          <input class="admin-text-input" id="adm_domicilioText" type="text" />
+        </div>
+        <div class="admin-grid2">
+          <div>
+            <label class="admin-label-sm">Horario de atención</label>
+            <input class="admin-text-input" id="adm_horario" type="text" />
+          </div>
+          <div>
+            <label class="admin-label-sm">Costo domicilio (COP, 0 = gratis)</label>
+            <input class="admin-text-input" id="adm_domicilioCosto" type="number" min="0" step="500" />
+          </div>
+        </div>
+        <div>
+          <label class="admin-label-sm">Compra mínima para domicilio gratis (COP, 0 = siempre)</label>
+          <input class="admin-text-input" id="adm_domicilioMin" type="number" min="0" step="1000" />
+        </div>
+      </div>
+
+      <!-- Sección: Precios productos -->
+      <div class="admin-section">
+        <h3>💰 Precios por Kilogramo (COP)</h3>
+        <div id="adminPriceList"></div>
+      </div>
+
+      <!-- Sección: Precios combos -->
+      <div class="admin-section">
+        <h3>📦 Precios de Combos (COP)</h3>
+        <div id="adminComboList"></div>
+      </div>
+
+      <button class="admin-save-btn" onclick="saveAdmin()">💾 Guardar todos los cambios</button>
+      <div class="admin-saved-msg" id="adminSavedMsg">✅ ¡Cambios guardados correctamente!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <strong>Districarnes El Ganadero CV</strong><br>
+  📍 Cra. 9a #1210, Agua de Dios, Cundinamarca &nbsp;·&nbsp;
+  <a href="tel:3103305527">310 330 5527</a> &nbsp;·&nbsp;
+  <a href="tel:3105518837">310 551 8837</a><br>
+  🚚 Servicio a domicilio disponible &nbsp;·&nbsp; 🕐 Todos los días 7:00 AM – 6:00 PM<br>
+  💳 Nequi · Daviplata · Efectivo<br>
+  <span class="red"><em>"Nutrición celular a través de proteínas y aminoácidos"</em></span><br><br>
+  <span class="admin-link" onclick="openAdminLogin()">⚙ Administración</span>
+</footer>
+
+<!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+<script>
+// ═══════════════════════════════════════════════════
+//  CATÁLOGO — Precios en COP por kilogramo
+//  (La libra colombiana = 500 g = precio_kg / 2)
+// ═══════════════════════════════════════════════════
+
+const DEFAULT_PRODUCTS = [
+  // RES — CORTES FINOS
+  { id:1,  cat:'res-fino',         emoji:'🥩', name:'Chata',                           priceKg:30000 },
+  { id:2,  cat:'res-fino',         emoji:'🥩', name:'Lomo Ancho',                      priceKg:30000 },
+  { id:3,  cat:'res-fino',         emoji:'🥩', name:'Lomo Fino',                       priceKg:32000 },
+  { id:4,  cat:'res-fino',         emoji:'🥩', name:'Punta de Anca',                   priceKg:28000 },
+  // RES — PRIMEROS CORTES
+  { id:5,  cat:'res-primera',      emoji:'🍖', name:'Bola de Pierna',                  priceKg:25000 },
+  { id:6,  cat:'res-primera',      emoji:'🍖', name:'Cadera con Colita',               priceKg:25000 },
+  { id:7,  cat:'res-primera',      emoji:'🍖', name:'Capón',                           priceKg:25000 },
+  { id:8,  cat:'res-primera',      emoji:'🍖', name:'Centro de Pierna',                priceKg:25000 },
+  { id:9,  cat:'res-primera',      emoji:'🍖', name:'Posta',                           priceKg:25000 },
+  // RES — SEGUNDOS CORTES
+  { id:10, cat:'res-segunda',      emoji:'🍖', name:'Bola de Brazo',                   priceKg:22000 },
+  { id:11, cat:'res-segunda',      emoji:'🍖', name:'Bota de Res',                     priceKg:25000 },
+  { id:12, cat:'res-segunda',      emoji:'🍖', name:'Cadera de Res',                   priceKg:25000 },
+  { id:13, cat:'res-segunda',      emoji:'🍖', name:'Descargue',                       priceKg:21000 },
+  { id:14, cat:'res-segunda',      emoji:'🍖', name:'Espaldilla',                      priceKg:22000 },
+  { id:15, cat:'res-segunda',      emoji:'🍖', name:'Falda de Res',                    priceKg:22000 },
+  { id:16, cat:'res-segunda',      emoji:'🍖', name:'Lomo de Brazo',                   priceKg:23000 },
+  { id:17, cat:'res-segunda',      emoji:'🍖', name:'Morcillo',                        priceKg:19000 },
+  { id:18, cat:'res-segunda',      emoji:'🍖', name:'Palomilla',                       priceKg:22000 },
+  { id:19, cat:'res-segunda',      emoji:'🍖', name:'Pecho de Res',                    priceKg:22000 },
+  { id:20, cat:'res-segunda',      emoji:'🍖', name:'Sobrebarriga Delgada',            priceKg:21000 },
+  { id:21, cat:'res-segunda',      emoji:'🍖', name:'Sobrebarriga Gruesa',             priceKg:21000 },
+  { id:22, cat:'res-segunda',      emoji:'🍖', name:'Tortuga',                         priceKg:22000 },
+  // HUESOS DE RES
+  { id:23, cat:'huesos-res',       emoji:'🦴', name:'Costilla Corriente',              priceKg:19000 },
+  { id:24, cat:'huesos-res',       emoji:'🦴', name:'Costilla Delantera',              priceKg:21000 },
+  { id:25, cat:'huesos-res',       emoji:'🦴', name:'Hueso de Agujas',                 priceKg:12000 },
+  { id:26, cat:'huesos-res',       emoji:'🦴', name:'Hueso de Cogote',                 priceKg:18000 },
+  { id:27, cat:'huesos-res',       emoji:'🦴', name:'Hueso de Paleta',                 priceKg:20000 },
+  { id:28, cat:'huesos-res',       emoji:'🦴', name:'Hueso de Sustancia',              priceKg: 5000 },
+  // VÍSCERAS ROJAS
+  { id:29, cat:'visceras-rojas',   emoji:'❤️', name:'Corazón',                        priceKg:12000 },
+  { id:30, cat:'visceras-rojas',   emoji:'❤️', name:'Entreverado',                    priceKg:14000 },
+  { id:31, cat:'visceras-rojas',   emoji:'❤️', name:'Hígado',                         priceKg:16000 },
+  { id:32, cat:'visceras-rojas',   emoji:'❤️', name:'Pajarilla',                      priceKg:14000 },
+  { id:33, cat:'visceras-rojas',   emoji:'❤️', name:'Pulmón de Res',                  priceKg:15000 },
+  { id:34, cat:'visceras-rojas',   emoji:'❤️', name:'Riñones',                        priceKg: 8000 },
+  // VÍSCERAS BLANCAS
+  { id:35, cat:'visceras-blancas', emoji:'🫀', name:'Cayo (Mondongo)',                priceKg:16000 },
+  { id:36, cat:'visceras-blancas', emoji:'🫀', name:'Chunchullo',                     priceKg:10000 },
+  { id:37, cat:'visceras-blancas', emoji:'🫀', name:'Lengua de Vaca (arreglada)',     priceKg:19000 },
+  { id:38, cat:'visceras-blancas', emoji:'🫀', name:'Mano de Res',                   priceKg:10000, unit:'unidad' },
+  { id:39, cat:'visceras-blancas', emoji:'🫀', name:'Revuelto de Cuajo y Libro',     priceKg:14000 },
+  // CERDO EN CANAL
+  { id:40, cat:'cerdo-canal',      emoji:'🐷', name:'Cerdo en Canal',                 priceKg:16000 },
+  // CERDO CON PIEL
+  { id:41, cat:'cerdo-piel',       emoji:'🐷', name:'Cerdo Despresado c/ Piel (Chuleta)', priceKg:18000 },
+  { id:42, cat:'cerdo-piel',       emoji:'🐷', name:'Pierna con Piel',                priceKg:19000 },
+  { id:43, cat:'cerdo-piel',       emoji:'🐷', name:'Costilomo con Piel',             priceKg:19000 },
+  { id:44, cat:'cerdo-piel',       emoji:'🐷', name:'Espinazo con Piel',              priceKg: 9000 },
+  { id:45, cat:'cerdo-piel',       emoji:'🐷', name:'Pezuñas',                        priceKg:12000 },
+  // CERDO DESHUESADO
+  { id:46, cat:'cerdo-des',        emoji:'🐷', name:'Pierna Deshuesada de Cerdo',     priceKg:23000 },
+  { id:47, cat:'cerdo-des',        emoji:'🐷', name:'Brazo Deshuesado de Cerdo',      priceKg:22000 },
+  // CERDO SIN PIEL
+  { id:48, cat:'cerdo-sinpiel',    emoji:'🐷', name:'Costilla sin Piel',             priceKg:23000 },
+  { id:49, cat:'cerdo-sinpiel',    emoji:'🐷', name:'Costilomo sin Piel',            priceKg:23000 },
+  { id:50, cat:'cerdo-sinpiel',    emoji:'🐷', name:'Lomo Magro de Cerdo',           priceKg:25000 },
+  // HUESOS CERDO
+  { id:51, cat:'cerdo-huesos',     emoji:'🦴', name:'Huesos Carnudos Medialuna',      priceKg:14000 },
+  { id:52, cat:'cerdo-huesos',     emoji:'🦴', name:'Espinazo Carnudo',               priceKg:14000 },
+  // TOCINOS
+  { id:53, cat:'cerdo-tocinos',    emoji:'🥓', name:'Tocinos Carnudos (Pancetas)',    priceKg:20000 },
+  { id:54, cat:'cerdo-tocinos',    emoji:'🥓', name:'Papadas',                        priceKg:14000 },
+  { id:55, cat:'cerdo-tocinos',    emoji:'🥓', name:'Tocino Corriente',               priceKg:10000 },
+  { id:56, cat:'cerdo-tocinos',    emoji:'🥓', name:'Tocino para Lechona',            priceKg:11000 },
+];
+
+const DEFAULT_COMBOS = [
+  { id:'c1', emoji:'🔥', name:'Combo Asado Ganadero',      price:118000, desc:'2 kg Costilla Delantera · 1 kg Lomo Fino · 1 kg Punta de Anca' },
+  { id:'c2', emoji:'🍲', name:'Combo Sancocho Completo',   price: 62000, desc:'1 kg Costilla Corriente · 500 g Sustancia · 500 g Cogote · 300 g Chunchullo' },
+  { id:'c3', emoji:'📦', name:'Combo Mayorista Res 10 kg', price:210000, desc:'3 kg Bola de Pierna · 3 kg Cadera · 2 kg Falda · 2 kg Pecho de Res' },
+  { id:'c4', emoji:'❤️', name:'Combo Surtido Vísceras',   price: 56000, desc:'500 g Hígado · 500 g Corazón · 500 g Cayo · 500 g Chunchullo' },
+  { id:'c5', emoji:'🥓', name:'Combo Cerdo Festivo',       price: 88000, desc:'2 kg Pierna Deshuesada · 1 kg Costilomo · 500 g Panceta · 500 g Papadas' },
+];
+
+const DEFAULT_CONFIG = {
+  domicilioText: '🚚 Domicilio disponible · Costo: $3.000 fijos · Gratis en compras mayores a $80.000',
+  domicilioCosto: 3000,
+  domicilioMin: 80000,
+  horario: 'Lun–Dom 7:00 AM – 6:00 PM',
+};
+
+const ADMIN_PASSWORD = 'ganadero2025'; // ← Cambia esta contraseña
+
+const CAT_LABELS = {
+  'all':'Todo el catálogo','res-fino':'Res — Cortes Finos','res-primera':'Res — Primeros Cortes',
+  'res-segunda':'Res — Segundos Cortes','huesos-res':'Huesos de Res',
+  'visceras-rojas':'Vísceras Rojas','visceras-blancas':'Vísceras Blancas',
+  'cerdo-canal':'Cerdo en Canal','cerdo-piel':'Cerdo — Cortes con Piel',
+  'cerdo-des':'Cerdo — Cortes Deshuesados','cerdo-sinpiel':'Cerdo — Cortes sin Piel',
+  'cerdo-huesos':'Huesos y Espinazo de Cerdo','cerdo-tocinos':'Tocinos y Pancetas',
+  'combo':'Combos Mayoristas',
+};
+
+const CAT_ORDER = ['res-fino','res-primera','res-segunda','huesos-res','visceras-rojas',
+  'visceras-blancas','cerdo-canal','cerdo-piel','cerdo-des','cerdo-sinpiel','cerdo-huesos','cerdo-tocinos'];
+
+const PHONE = '573103305527'; // ← Tu número real aquí
+
+// ── STORAGE ──
+function loadData() {
+  try {
+    const saved = localStorage.getItem('ganadero_data');
+    if (saved) {
+      const d = JSON.parse(saved);
+      // Merge prices from saved into defaults (in case new products added)
+      PRODUCTS.forEach(p => {
+        if (d.prices && d.prices[p.id] !== undefined) p.priceKg = d.prices[p.id];
+      });
+      COMBOS.forEach(c => {
+        if (d.comboPrices && d.comboPrices[c.id] !== undefined) c.price = d.comboPrices[c.id];
+      });
+      if (d.config) Object.assign(CONFIG, d.config);
+    }
+  } catch(e) {}
+}
+
+function saveData() {
+  const prices = {};
+  PRODUCTS.forEach(p => prices[p.id] = p.priceKg);
+  const comboPrices = {};
+  COMBOS.forEach(c => comboPrices[c.id] = c.price);
+  localStorage.setItem('ganadero_data', JSON.stringify({ prices, comboPrices, config: CONFIG }));
+}
+
+// ── MUTABLE STATE ARRAYS ──
+const PRODUCTS = DEFAULT_PRODUCTS.map(p => ({...p}));
+const COMBOS   = DEFAULT_COMBOS.map(c => ({...c}));
+const CONFIG   = {...DEFAULT_CONFIG};
+
+// ── APP STATE ──
+let currentCat  = 'all';
+let currentUnit = 'kg';
+let quantities  = {};
+let cart        = [];
+let cartOpen    = false;
+
+// Libra colombiana = 500g → precio_lb = precio_kg / 2
+function getPriceLb(priceKg) { return priceKg / 2; }
+
+// ── UTILS ──
+const fmt = n => '$' + Math.round(n).toLocaleString('es-CO');
+
+function getFiltered() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  return PRODUCTS.filter(p => {
+    const matchCat = currentCat === 'all' || p.cat === currentCat;
+    const matchQ   = !q || p.name.toLowerCase().includes(q) || CAT_LABELS[p.cat].toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+}
+
+function updateCounts() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  Object.keys(CAT_LABELS).forEach(cat => {
+    const el = document.getElementById('cnt-' + cat);
+    if (!el) return;
+    if (cat === 'combo') { el.textContent = COMBOS.length; return; }
+    const src = cat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === cat);
+    el.textContent = src.filter(p => !q || p.name.toLowerCase().includes(q) || CAT_LABELS[p.cat].toLowerCase().includes(q)).length;
+  });
+}
+
+function renderDomicilioBanner() {
+  const b = document.getElementById('domicilioBanner');
+  b.innerHTML = CONFIG.domicilioText || '';
+
+  const note = document.getElementById('domicilioNote');
+  if (note) {
+    if (CONFIG.domicilioCosto > 0 && CONFIG.domicilioMin > 0) {
+      note.textContent = `🚚 Domicilio: ${fmt(CONFIG.domicilioCosto)} · Gratis comprando más de ${fmt(CONFIG.domicilioMin)}`;
+    } else if (CONFIG.domicilioCosto === 0) {
+      note.textContent = '🚚 ¡Domicilio gratis!';
+    } else {
+      note.textContent = `🚚 Costo de domicilio: ${fmt(CONFIG.domicilioCosto)}`;
+    }
+  }
+}
+
+function renderCatalog() {
+  const filtered   = getFiltered();
+  const showCombos = currentCat === 'all' || currentCat === 'combo';
+  const q          = document.getElementById('searchInput').value.trim();
+  updateCounts();
+  document.getElementById('catTitle').textContent    = CAT_LABELS[currentCat] || 'Catálogo';
+  document.getElementById('resultCount').textContent = (filtered.length + (showCombos ? COMBOS.length : 0)) + ' productos';
+
+  const content = document.getElementById('catalogContent');
+  content.innerHTML = '';
+  let hasProducts = false;
+
+  CAT_ORDER.forEach(cat => {
+    const group = filtered.filter(p => p.cat === cat);
+    if (!group.length) return;
+    hasProducts = true;
+    const lbl = document.createElement('div');
+    lbl.className = 'section-label';
+    lbl.textContent = CAT_LABELS[cat];
+    content.appendChild(lbl);
+    const grid = document.createElement('div');
+    grid.className = 'product-grid';
+    group.forEach(p => grid.appendChild(makeCard(p)));
+    content.appendChild(grid);
+  });
+
+  if (showCombos) {
+    hasProducts = true;
+    const lbl = document.createElement('div');
+    lbl.className = 'section-label';
+    lbl.textContent = '📦 Combos Mayoristas';
+    content.appendChild(lbl);
+    const cg = document.createElement('div');
+    cg.className = 'combo-grid';
+    COMBOS.forEach(c => {
+      const inCart = cart.some(i => i.id === c.id);
+      const div = document.createElement('div');
+      div.className = 'combo-card';
+      div.innerHTML = `
+        <div class="combo-icon">${c.emoji}</div>
+        <div class="combo-info">
+          <div class="combo-name">${c.name}</div>
+          <div class="combo-desc">${c.desc}</div>
+        </div>
+        <div class="combo-price">${fmt(c.price)}</div>
+        <button class="combo-add${inCart?' in-cart':''}" onclick="addCombo('${c.id}')">
+          ${inCart ? '✓ Agregado' : '+ Agregar'}
+        </button>`;
+      cg.appendChild(div);
+    });
+    content.appendChild(cg);
+  }
+
+  if (!hasProducts) {
+    content.innerHTML = `<div class="no-results"><div class="ni">🔍</div><p>No se encontraron productos para <strong>"${q}"</strong><br><small>Intenta: lomo, cadera, hígado, panceta, costilla…</small></p></div>`;
+  }
+}
+
+function makeCard(p) {
+  const inCart    = cart.some(i => i.id === p.id);
+  const isUnit    = p.unit === 'unidad';
+  const qty       = quantities[p.id] || 1;
+  let unitLabel, unitPrice;
+  if (isUnit) {
+    unitLabel = 'unidad';
+    unitPrice = p.priceKg;
+  } else if (currentUnit === 'lb') {
+    unitLabel = 'lb';
+    unitPrice = getPriceLb(p.priceKg);
+  } else {
+    unitLabel = 'kg';
+    unitPrice = p.priceKg;
+  }
+  const step  = isUnit ? 1 : (currentUnit === 'lb' ? 1 : 0.5);
+  const minQ  = isUnit ? 1 : (currentUnit === 'lb' ? 1 : 0.5);
+
+  const card      = document.createElement('div');
+  card.className  = 'card';
+  card.id         = 'card-' + p.id;
+  card.innerHTML  = `
+    <div class="card-top-wrap">
+      <div class="card-img-placeholder${isUnit?' gold':''}">
+        <span class="card-emoji">${p.emoji}</span>
+      </div>
+      <span class="card-cat-tag">${CAT_LABELS[p.cat]}</span>
+    </div>
+    <div class="card-body">
+      <div class="card-name">${p.name}</div>
+      <div class="card-price">${fmt(unitPrice)} <span>/ ${unitLabel}</span></div>
+      <div class="qty-row">
+        <button class="qty-btn" onclick="changeQty(${p.id},-${step})">−</button>
+        <input class="qty-input" type="number" min="${minQ}" step="${step}" value="${qty}"
+               onchange="setQty(${p.id},this.value)" />
+        <button class="qty-btn" onclick="changeQty(${p.id},${step})">+</button>
+        <span class="qty-unit">${unitLabel}</span>
+      </div>
+      <button class="add-btn${inCart?' in-cart':''}" onclick="addToCart(${p.id})">
+        ${inCart ? '✓ En el pedido' : '+ Agregar al pedido'}
+      </button>
+    </div>`;
+  return card;
+}
+
+// ── QTY ──
+function changeQty(id, delta) {
+  const p   = PRODUCTS.find(x => x.id === id);
+  const isU = p && p.unit === 'unidad';
+  const min = isU ? 1 : (currentUnit === 'lb' ? 1 : 0.5);
+  quantities[id] = Math.max(min, Math.round(((quantities[id] || min) + delta) * 10) / 10);
+  syncCardQty(id);
+}
+function setQty(id, val) {
+  const p   = PRODUCTS.find(x => x.id === id);
+  const isU = p && p.unit === 'unidad';
+  const min = isU ? 1 : (currentUnit === 'lb' ? 1 : 0.5);
+  const v   = parseFloat(val);
+  quantities[id] = isNaN(v) || v < min ? min : Math.round(v * 10) / 10;
+  syncCardQty(id);
+}
+function syncCardQty(id) {
+  const card = document.getElementById('card-' + id);
+  if (card) { const inp = card.querySelector('.qty-input'); if (inp) inp.value = quantities[id]; }
+  const ci = cart.find(i => i.id === id);
+  if (ci) {
+    const p   = PRODUCTS.find(x => x.id === id);
+    const isU = p && p.unit === 'unidad';
+    ci.qty  = quantities[id];
+    ci.unit = isU ? 'unidad' : currentUnit;
+    ci.unitPrice = isU ? p.priceKg : (currentUnit === 'lb' ? getPriceLb(p.priceKg) : p.priceKg);
+    ci.subtotal  = ci.unitPrice * ci.qty;
+    renderDrawer();
+  }
+}
+
+// ── UNIT ──
+function setUnit(u) {
+  currentUnit = u;
+  document.getElementById('btnKg').classList.toggle('active', u === 'kg');
+  document.getElementById('btnLb').classList.toggle('active', u === 'lb');
+  // Reset quantities to avoid confusion when switching units
+  quantities = {};
+  renderCatalog();
+}
+
+// ── CART ──
+function addToCart(id) {
+  const p   = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const isU = p.unit === 'unidad';
+  const min = isU ? 1 : (currentUnit === 'lb' ? 1 : 0.5);
+  const qty = quantities[id] || min;
+  const unit = isU ? 'unidad' : currentUnit;
+  const up   = isU ? p.priceKg : (currentUnit === 'lb' ? getPriceLb(p.priceKg) : p.priceKg);
+  const ex   = cart.find(i => i.id === id);
+  if (ex) { ex.qty = qty; ex.unit = unit; ex.unitPrice = up; ex.subtotal = up * qty; }
+  else cart.push({ id, name: p.name, emoji: p.emoji, qty, unit, unitPrice: up, subtotal: up * qty });
+  updateBadge(); renderDrawer(); renderCatalog();
+}
+
+function addCombo(cid) {
+  const c = COMBOS.find(x => x.id === cid);
+  if (!c || cart.some(i => i.id === cid)) return;
+  cart.push({ id: cid, name: c.name, emoji: c.emoji, qty: 1, unit: 'combo', unitPrice: c.price, subtotal: c.price });
+  updateBadge(); renderDrawer(); renderCatalog();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => String(i.id) !== String(id));
+  updateBadge(); renderDrawer(); renderCatalog();
+}
+
+function clearCart() {
+  if (!cart.length || !confirm('¿Vaciar todo el pedido?')) return;
+  cart = []; quantities = {};
+  updateBadge(); renderDrawer(); renderCatalog();
+}
+
+function updateBadge() {
+  const b = document.getElementById('cartBadge');
+  b.textContent = cart.length;
+  b.classList.remove('bump');
+  void b.offsetWidth;
+  b.classList.add('bump');
+  setTimeout(() => b.classList.remove('bump'), 400);
+}
+
+function renderDrawer() {
+  const c = document.getElementById('drawerItems');
+  if (!cart.length) {
+    c.innerHTML = `<div class="empty-cart"><div class="big-i">🛒</div><p>Tu pedido está vacío.<br>¡Elige tus cortes del catálogo!</p></div>`;
+    document.getElementById('totalAmount').textContent = '$0';
+    return;
+  }
+  let total = 0;
+  c.innerHTML = cart.map(item => {
+    total += item.subtotal;
+    return `<div class="cart-item">
+      <div class="ci-emoji">${item.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-detail">${item.qty} ${item.unit} · ${fmt(item.unitPrice)}/${item.unit}</div>
+      </div>
+      <div class="ci-sub">${fmt(item.subtotal)}</div>
+      <button class="ci-rm" onclick="removeFromCart('${item.id}')">✕</button>
+    </div>`;
+  }).join('');
+  document.getElementById('totalAmount').textContent = fmt(total);
+}
+
+function toggleCart() {
+  cartOpen = !cartOpen;
+  document.getElementById('cartDrawer').classList.toggle('open', cartOpen);
+  document.getElementById('overlay').classList.toggle('open', cartOpen);
+  if (cartOpen) renderDrawer();
+}
+
+// ── WHATSAPP ──
+function sendWhatsApp() {
+  if (!cart.length) { alert('¡Agrega productos a tu pedido primero!'); return; }
+  const nombre = document.getElementById('customerName').value.trim();
+  const fecha  = new Date().toLocaleDateString('es-CO', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+  let msg = `🐂 *PEDIDO — Districarnes El Ganadero CV*\n`;
+  if (nombre) msg += `👤 *${nombre}*\n`;
+  msg += `📅 ${fecha}\n\n*PRODUCTOS SOLICITADOS:*\n`;
+  cart.forEach((item, i) => {
+    msg += `${i+1}. ${item.emoji} *${item.name}*\n   ${item.qty} ${item.unit} × ${fmt(item.unitPrice)} = *${fmt(item.subtotal)}*\n`;
+  });
+  const total = cart.reduce((a,b) => a + b.subtotal, 0);
+  msg += `\n💰 *TOTAL ESTIMADO: ${fmt(total)}*\n`;
+  if (CONFIG.domicilioCosto > 0) {
+    msg += `🚚 *Domicilio: ${fmt(CONFIG.domicilioCosto)}*\n`;
+  }
+  msg += `\n_Pedido generado desde el catálogo digital · Districarnes El Ganadero CV_\n`;
+  msg += `📍 Cra. 9a #1210, Agua de Dios, Cundinamarca`;
+  window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function openWaConsulta() {
+  const msg = `¡Hola! 👋 Tengo una consulta sobre los productos de *Districarnes El Ganadero CV*. `;
+  window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// ── FILTER & SEARCH ──
+function filterCat(btn, cat) {
+  currentCat = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCatalog();
+}
+
+document.getElementById('searchInput').addEventListener('input', () => {
+  if (document.getElementById('searchInput').value.trim()) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-cat="all"]').classList.add('active');
+    currentCat = 'all';
+  }
+  renderCatalog();
+});
+
+// ═══════════════════════════════════════════════════
+//  ADMIN PANEL
+// ═══════════════════════════════════════════════════
+
+function openAdminLogin() {
+  document.getElementById('adminPassInput').value = '';
+  document.getElementById('loginErr').style.display = 'none';
+  document.getElementById('adminLoginOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('adminPassInput').focus(), 100);
+}
+
+function checkPass() {
+  const val = document.getElementById('adminPassInput').value;
+  if (val === ADMIN_PASSWORD) {
+    document.getElementById('adminLoginOverlay').classList.remove('open');
+    openAdminPanel();
+  } else {
+    document.getElementById('loginErr').style.display = 'block';
+    document.getElementById('adminPassInput').value = '';
+    document.getElementById('adminPassInput').focus();
+  }
+}
+
+document.getElementById('adminLoginOverlay').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('open');
+});
+
+function openAdminPanel() {
+  // Llenar campos de config
+  document.getElementById('adm_domicilioText').value  = CONFIG.domicilioText;
+  document.getElementById('adm_domicilioCosto').value = CONFIG.domicilioCosto;
+  document.getElementById('adm_domicilioMin').value   = CONFIG.domicilioMin;
+  document.getElementById('adm_horario').value        = CONFIG.horario;
+
+  // Llenar precios productos
+  const pl = document.getElementById('adminPriceList');
+  pl.innerHTML = '';
+  PRODUCTS.forEach(p => {
+    const isU = p.unit === 'unidad';
+    const row = document.createElement('div');
+    row.className = 'admin-row';
+    row.innerHTML = `
+      <div class="admin-row-label">
+        ${p.emoji} ${p.name}
+        <span class="admin-row-sub">${CAT_LABELS[p.cat]}</span>
+      </div>
+      <input class="admin-price-input" type="number" min="0" step="500"
+             id="adm_p_${p.id}" value="${p.priceKg}" />
+      <span class="admin-price-unit">/ ${isU ? 'unidad' : 'kg'}</span>`;
+    pl.appendChild(row);
+  });
+
+  // Llenar precios combos
+  const cl = document.getElementById('adminComboList');
+  cl.innerHTML = '';
+  COMBOS.forEach(c => {
+    const row = document.createElement('div');
+    row.className = 'admin-row';
+    row.innerHTML = `
+      <div class="admin-row-label">
+        ${c.emoji} ${c.name}
+        <span class="admin-row-sub">${c.desc}</span>
+      </div>
+      <input class="admin-price-input" type="number" min="0" step="1000"
+             id="adm_c_${c.id}" value="${c.price}" />
+      <span class="admin-price-unit">combo</span>`;
+    cl.appendChild(row);
+  });
+
+  document.getElementById('adminSavedMsg').style.display = 'none';
+  document.getElementById('adminPanelOverlay').classList.add('open');
+}
+
+function closeAdmin() {
+  document.getElementById('adminPanelOverlay').classList.remove('open');
+}
+
+document.getElementById('adminPanelOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeAdmin();
+});
+
+function saveAdmin() {
+  // Config
+  CONFIG.domicilioText  = document.getElementById('adm_domicilioText').value.trim();
+  CONFIG.domicilioCosto = parseInt(document.getElementById('adm_domicilioCosto').value) || 0;
+  CONFIG.domicilioMin   = parseInt(document.getElementById('adm_domicilioMin').value) || 0;
+  CONFIG.horario        = document.getElementById('adm_horario').value.trim();
+
+  // Precios productos
+  PRODUCTS.forEach(p => {
+    const inp = document.getElementById('adm_p_' + p.id);
+    if (inp) p.priceKg = parseInt(inp.value) || p.priceKg;
+  });
+
+  // Precios combos
+  COMBOS.forEach(c => {
+    const inp = document.getElementById('adm_c_' + c.id);
+    if (inp) c.price = parseInt(inp.value) || c.price;
+  });
+
+  saveData();
+  renderDomicilioBanner();
+  renderCatalog();
+
+  const msg = document.getElementById('adminSavedMsg');
+  msg.style.display = 'block';
+  setTimeout(() => msg.style.display = 'none', 3000);
+}
+
+// ── INIT ──
+loadData();
+renderDomicilioBanner();
+renderCatalog();
+</script>
+</body>
+</html>

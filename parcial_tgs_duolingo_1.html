@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parcial II: Era del Conocimiento desde la TGS</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #58CC02;
+    --green-dark: #4CAF00;
+    --green-light: #D7F5B1;
+    --green-muted: #89E219;
+    --white: #FFFFFF;
+    --gray-soft: #F7F7F7;
+    --gray-light: #EBEBEB;
+    --gray-mid: #AFAFAF;
+    --gray-dark: #4B4B4B;
+    --text: #2D2D2D;
+    --blue: #1CB0F6;
+    --blue-light: #DDF4FF;
+    --orange: #FF9600;
+    --orange-light: #FFF3D8;
+    --red: #FF4B4B;
+    --red-light: #FFE0E0;
+    --purple: #CE82FF;
+    --purple-light: #F3E8FF;
+    --shadow: 0 4px 0 rgba(0,0,0,0.12);
+    --shadow-card: 0 2px 12px rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--gray-soft);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  header {
+    background: var(--green);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(88,204,2,0.3);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .owl-logo {
+    width: 42px; height: 42px;
+    background: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.15);
+    flex-shrink: 0;
+  }
+
+  header h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: white;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+  }
+  header h1 span {
+    display: block;
+    font-weight: 600;
+    font-size: 0.75rem;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+  }
+
+  .header-badge {
+    margin-left: auto;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+  }
+
+  nav {
+    background: white;
+    border-bottom: 2px solid var(--gray-light);
+    overflow-x: auto;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    gap: 4px;
+  }
+  nav ul li a {
+    display: block;
+    padding: 14px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--gray-mid);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    color: var(--green);
+    border-bottom-color: var(--green);
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-muted) 100%);
+    padding: 56px 24px 48px;
+    text-align: center;
+    color: white;
+  }
+  .hero-emoji { font-size: 3rem; display: block; margin-bottom: 12px; }
+  .hero h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+  .hero p {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 580px;
+    margin: 0 auto 24px;
+  }
+  .hero-authors {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .author-chip {
+    background: rgba(255,255,255,0.22);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: white;
+  }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .section-block {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+
+  .section-header {
+    padding: 20px 28px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 2px solid var(--gray-light);
+  }
+  .section-number {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: white;
+    flex-shrink: 0;
+  }
+  .n1 { background: var(--green); box-shadow: 0 3px 0 var(--green-dark); }
+  .n2 { background: var(--blue); box-shadow: 0 3px 0 #109ac4; }
+  .n3 { background: var(--orange); box-shadow: 0 3px 0 #d07a00; }
+  .n4 { background: var(--purple); box-shadow: 0 3px 0 #a855f7; }
+
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+  .section-title small {
+    display: block;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--gray-mid);
+    margin-top: 1px;
+  }
+
+  .section-body { padding: 28px; }
+
+  .card {
+    background: var(--gray-soft);
+    border-radius: var(--radius-sm);
+    padding: 20px 22px;
+    margin-bottom: 18px;
+    border-left: 4px solid var(--green);
+  }
+  .card.blue { border-left-color: var(--blue); }
+  .card.orange { border-left-color: var(--orange); }
+  .card.red { border-left-color: var(--red); }
+  .card.purple { border-left-color: var(--purple); }
+
+  .card-label {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .card.blue .card-label { color: var(--blue); }
+  .card.orange .card-label { color: var(--orange); }
+  .card.red .card-label { color: var(--red); }
+  .card.purple .card-label { color: var(--purple); }
+
+  .card h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .card p { font-size: 0.9rem; color: #555; }
+
+  /* ── IMAGE WRAPPER ── */
+  .img-wrapper {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin: 18px 0;
+    border: 2px solid var(--gray-light);
+    background: var(--gray-soft);
+    text-align: center;
+  }
+  .img-wrapper img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .img-caption {
+    padding: 10px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--gray-mid);
+    text-align: center;
+    border-top: 1.5px solid var(--gray-light);
+    background: white;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .info-box {
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+  }
+  .info-box.green { background: var(--green-light); border: 1.5px solid #b0e880; }
+  .info-box.blue { background: var(--blue-light); border: 1.5px solid #a0dff7; }
+  .info-box.orange { background: var(--orange-light); border: 1.5px solid #ffd48a; }
+  .info-box.red { background: var(--red-light); border: 1.5px solid #ffb0b0; }
+  .info-box.purple { background: var(--purple-light); border: 1.5px solid #ddb8f7; }
+
+  .info-box strong {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.92rem;
+  }
+
+  .cite {
+    background: #f9f9f9;
+    border-left: 3px solid var(--gray-mid);
+    padding: 10px 16px;
+    margin: 12px 0;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #666;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .system-diagram {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 20px 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 2px solid var(--gray-light);
+    flex-wrap: wrap;
+  }
+  .sys-col {
+    flex: 1 1 120px;
+    padding: 18px 14px;
+    text-align: center;
+    min-width: 100px;
+  }
+  .sys-col.entrada { background: var(--blue-light); }
+  .sys-col.proceso { background: var(--green-light); }
+  .sys-col.salida  { background: var(--orange-light); }
+  .sys-col.retro   { background: var(--red-light); }
+  .sys-col.entorno { background: var(--purple-light); }
+
+  .sys-arrow {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: var(--gray-mid);
+    padding: 0 4px;
+    align-self: center;
+  }
+  @media (max-width: 640px) { .sys-arrow { display: none; } }
+
+  .sys-col .sys-icon { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+  .sys-col h5 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .sys-col p { font-size: 0.75rem; color: #555; }
+
+  .reflection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 640px) { .reflection-grid { grid-template-columns: 1fr; } }
+
+  .reflection-card {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 2px solid var(--gray-light);
+  }
+  .reflection-head {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .rh-green { background: var(--green-light); }
+  .rh-blue  { background: var(--blue-light); }
+
+  .avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .av-green { background: var(--green); }
+  .av-blue  { background: var(--blue); }
+
+  .reflection-head h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+  .reflection-head small {
+    font-size: 0.72rem;
+    color: var(--gray-mid);
+    font-weight: 600;
+  }
+
+  .reflection-body { padding: 20px; }
+
+  .q-block {
+    border: 1.5px dashed #ccc;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background: var(--gray-soft);
+  }
+  .q-num {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 5px;
+  }
+  .q-block p {
+    font-size: 0.85rem;
+    color: #555;
+    font-style: italic;
+  }
+  .q-answer {
+    margin-top: 8px;
+    min-height: 42px;
+    background: white;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    color: var(--gray-mid);
+    font-style: italic;
+  }
+
+  .web-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1.5px solid var(--gray-light);
+    margin: 20px 0;
+  }
+  .web-table th {
+    background: var(--green);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .web-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-light); }
+  .web-table tr:last-child td { border-bottom: none; }
+  .web-table tr:nth-child(even) td { background: var(--gray-soft); }
+
+  .ideas-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .ideas-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: #444;
+  }
+  .idea-num {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--green);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 0.82rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .divider-label {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin: 24px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .divider-label::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: var(--gray-light);
+  }
+
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 0.8rem;
+  }
+  footer strong { color: var(--green); }
+
+  .synergy-box {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    color: white;
+    margin: 18px 0;
+  }
+  .synergy-box h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .synergy-box p { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin-bottom: 10px; }
+  .synergy-box .cite-dark {
+    background: rgba(255,255,255,0.07);
+    border-left: 3px solid var(--green);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="owl-logo">🦉</div>
+    <h1>
+      Parcial II · TGS & Era del Conocimiento
+      <span>Teoría General de Sistemas — Proyecto Universitario</span>
+    </h1>
+    <span class="header-badge">2025</span>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#s1" class="active">🌐 Web y Sociedad</a></li>
+    <li><a href="#s2">💡 Era del Conocimiento</a></li>
+    <li><a href="#s3">🦉 TGS en Duolingo</a></li>
+    <li><a href="#s4">📝 Reflexiones</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <span class="hero-emoji">🎓</span>
+  <h2>Era del Conocimiento desde la TGS</h2>
+  <p>Análisis sistémico de la evolución hacia la sociedad del conocimiento aplicando la Teoría General de Sistemas de Ludwig von Bertalanffy.</p>
+  <div class="hero-authors">
+    <span class="author-chip">👤 Gabriel Camilo Martin Palacios</span>
+    <span class="author-chip">👤 Javier Andrés Galeano Chacón</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══ SECCIÓN 1 ══ -->
+  <div class="section-block" id="s1">
+    <div class="section-header">
+      <div class="section-number n1">1</div>
+      <div class="section-title">
+        Evolución de la Web y Sociedad
+        <small>De la Web 1.0 a la Sociedad del Conocimiento</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <!-- ✅ IMAGEN esquemaweb.jpeg en su lugar correcto -->
+      <div class="img-wrapper">
+        <img src="esquemaweb.jpeg" alt="Esquema de evolución de la Web 1.0 a Web 4.0">
+        <div class="img-caption">📊 Esquema: Evolución de la Web 1.0 → Web 4.0 (elaboración propia)</div>
+      </div>
+
+      <div class="divider-label">Referencia: Evolución de la Web</div>
+      <table class="web-table">
+        <thead>
+          <tr>
+            <th>Versión</th>
+            <th>Nombre</th>
+            <th>Característica central</th>
+            <th>Rol del usuario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Web 1.0</strong></td>
+            <td>Web Estática</td>
+            <td>Solo lectura. Contenido fijo generado por webmasters.</td>
+            <td>Consumidor pasivo</td>
+          </tr>
+          <tr>
+            <td><strong>Web 2.0</strong></td>
+            <td>Web Social</td>
+            <td>Lectura-escritura. Redes sociales, wikis, blogs colaborativos.</td>
+            <td>Prosumidor activo</td>
+          </tr>
+          <tr>
+            <td><strong>Web 3.0</strong></td>
+            <td>Web Semántica</td>
+            <td>Datos interconectados, IA y personalización inteligente.</td>
+            <td>Co-creador contextual</td>
+          </tr>
+          <tr>
+            <td><strong>Web 4.0</strong></td>
+            <td>Web Ubicua</td>
+            <td>IoT, computación cognitiva e integración total digital-física.</td>
+            <td>Agente en ecosistema inteligente</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="divider-label">Diferenciación conceptual</div>
+      <div class="grid-2">
+        <div class="info-box blue">
+          <strong>📊 Sociedad de la Información</strong>
+          Se centra en la <em>disponibilidad y transmisión</em> de datos. El valor reside en el acceso y la circulación masiva de información a través de tecnologías digitales. Los datos existen como hechos objetivos descontextualizados.
+          <div class="cite">Castells, M. (1999). <em>La era de la información: economía, sociedad y cultura.</em> Siglo XXI.</div>
+        </div>
+        <div class="info-box green">
+          <strong>🧠 Sociedad del Conocimiento</strong>
+          Supera la dimensión técnica: el valor está en la <em>capacidad de procesar, interpretar y aplicar</em> información de forma crítica y creativa. El conocimiento es contextual, dinámico y socialmente construido.
+          <div class="cite">UNESCO (2005). <em>Hacia las sociedades del conocimiento.</em> Ediciones UNESCO.</div>
+        </div>
+      </div>
+
+      <div class="divider-label">Análisis técnico</div>
+      <div class="card">
+        <div class="card-label">🔄 Pregunta clave</div>
+        <h4>¿En qué momento la información se convierte en conocimiento?</h4>
+        <p>
+          La información per se es un conjunto de datos organizados con estructura sintáctica y semántica, pero carente de significado funcional para el receptor. La transición hacia conocimiento ocurre cuando el sujeto ejecuta un <strong>proceso cognitivo de asimilación</strong>, que implica tres etapas diferenciadas:
+        </p>
+        <br>
+        <p>
+          <strong>1. Recepción:</strong> el individuo accede a la información a través de canales sensoriales y tecnológicos.<br>
+          <strong>2. Procesamiento:</strong> la información es confrontada con estructuras cognitivas previas (esquemas mentales), generando conexiones significativas. Es aquí donde la neurociencia identifica la formación de nuevas sinapsis.<br>
+          <strong>3. Aplicación práctica:</strong> el conocimiento se consolida cuando el sujeto puede <em>transferirlo a contextos nuevos</em>, resolver problemas o generar nuevas ideas. Sin aplicación, la información permanece como dato inerte.
+        </p>
+        <div class="cite">Nonaka, I. & Takeuchi, H. (1995). <em>The Knowledge-Creating Company.</em> Oxford University Press.</div>
+      </div>
+
+      <div class="info-box orange">
+        <strong>⚠️ Implicación sistémica</strong>
+        Desde la TGS, la información actúa como <em>entrada (input)</em> al sistema cognitivo humano, mientras que el conocimiento es la <em>salida (output)</em> resultante del procesamiento interno. La retroalimentación (feedback) ocurre cuando ese conocimiento se aplica al entorno y genera nuevas experiencias que realimentan el ciclo.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 2 ══ -->
+  <div class="section-block" id="s2">
+    <div class="section-header">
+      <div class="section-number n2">2</div>
+      <div class="section-title">
+        Análisis de la Era del Conocimiento
+        <small>Ideas clave, críticas e implicaciones para la ingeniería</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="divider-label">3 Ideas Clave — Video: La Era del Conocimiento</div>
+      <ul class="ideas-list">
+        <li>
+          <span class="idea-num">1</span>
+          <div>
+            <strong>El conocimiento como principal activo económico.</strong> En la economía del siglo XXI, los activos intangibles —patentes, algoritmos, datos, talento creativo— superan en valor a los activos físicos tradicionales. Las organizaciones que acumulan y gestionan conocimiento estratégico dominan mercados y generan ventajas competitivas sostenibles. Esto redefine el capital: ya no es solo dinero o maquinaria, sino la capacidad de aprender y generar soluciones inéditas.
+            <div class="cite">Drucker, P. (1993). <em>Post-Capitalist Society.</em> HarperBusiness.</div>
+          </div>
+        </li>
+        <li>
+          <span class="idea-num">2</span>
+          <div>
+            <strong>La obsolescencia rápida de la información.</strong> El ciclo de vida del conocimiento se ha comprimido drásticamente. Competencias técnicas que eran relevantes hace cinco años pueden ser hoy obsoletas ante la irrupción de nuevas tecnologías. Esto genera lo que se denomina "medio tiempo del conocimiento": el periodo en que la mitad de lo aprendido deja de ser aplicable.
+            <div class="cite">González, F. (2021). <em>Gestión del conocimiento en organizaciones inteligentes.</em> McGraw-Hill.</div>
+          </div>
+        </li>
+        <li>
+          <span class="idea-num">3</span>
+          <div>
+            <strong>El aprendizaje continuo como imperativo existencial.</strong> En la Era del Conocimiento, aprender no es una fase temporal de la vida (la etapa escolar) sino una práctica permanente. El concepto de <em>lifelong learning</em> plantea que la adaptabilidad cognitiva es la habilidad más valiosa, por encima de cualquier conocimiento específico.
+            <div class="cite">OCDE (2019). <em>Trends Shaping Education.</em> OECD Publishing.</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="divider-label">2 Críticas al modelo</div>
+      <div class="card red">
+        <div class="card-label red">⚖️ Crítica 1 — ¿Democratización o concentración del conocimiento?</div>
+        <h4>La paradoja de la aparente democratización</h4>
+        <p>
+          Aunque internet promete un acceso universal al conocimiento, la realidad evidencia una <strong>concentración estructural</strong>: las plataformas que controlan los algoritmos de distribución —Google, Meta, Amazon— determinan qué conocimiento es visible y cuál es opacado. El conocimiento de alto valor (investigación científica, formación especializada, bases de datos premium) continúa siendo un privilegio de quienes pueden costear acceso. La brecha digital —entendida no solo como ausencia de dispositivos, sino como falta de habilidades digitales críticas— actúa como mecanismo de exclusión sistemática. En Colombia, por ejemplo, más del 40% de los hogares rurales carecen de acceso estable a internet (DANE, 2022), lo que perpetúa desigualdades cognitivas.
+        </p>
+        <div class="cite">DANE (2022). <em>Encuesta de Calidad de Vida.</em> Bogotá: Departamento Administrativo Nacional de Estadística.</div>
+      </div>
+      <div class="card orange">
+        <div class="card-label">🏭 Crítica 2 — El conocimiento como mercancía</div>
+        <h4>La mercantilización del aprendizaje</h4>
+        <p>
+          La Era del Conocimiento ha generado una paradoja: al convertir el saber en activo económico, lo somete a las lógicas del mercado. La educación deja de ser un derecho universal para transformarse en un producto con precio. Los MOOCs, las certificaciones digitales y las plataformas de formación corporativa reproducen modelos donde el acceso al conocimiento de calidad depende de la capacidad adquisitiva, reforzando la estratificación social del aprendizaje.
+        </p>
+      </div>
+
+      <div class="divider-label">Implicación para la Ingeniería</div>
+      <div class="info-box green">
+        <strong>⚙️ El Ingeniero como Gestor de Sistemas de Aprendizaje</strong>
+        <p style="margin-top:6px">
+          El paradigma tradicional del ingeniero como administrador técnico de datos y procesos ha quedado insuficiente. En la Era del Conocimiento, el rol del ingeniero evoluciona hacia el de un <strong>arquitecto de ecosistemas de aprendizaje organizacional</strong>. Esto implica diseñar sistemas que no solo procesen datos, sino que generen, distribuyan y actualicen conocimiento de forma continua y adaptativa.
+        </p>
+        <p style="margin-top:8px">
+          El ingeniero moderno debe dominar: (1) gestión del conocimiento tácito y explícito, (2) diseño de sistemas de retroalimentación inteligentes, (3) análisis de datos para identificar patrones de aprendizaje, y (4) liderazgo de comunidades de práctica interdisciplinares. El dato por sí solo ya no basta; es la interpretación sistémica del dato lo que genera valor diferencial.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 3 ══ -->
+  <div class="section-block" id="s3">
+    <div class="section-header">
+      <div class="section-number n3">3</div>
+      <div class="section-title">
+        Aplicación TGS en Duolingo
+        <small>Análisis sistémico con base en Bertalanffy</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <!-- ✅ IMAGEN doulingo.jpeg en su lugar correcto -->
+      <div class="img-wrapper">
+        <img src="doulingo.jpeg" alt="Modelo sistémico de Duolingo elaborado a mano">
+        <div class="img-caption">🖊️ Modelo Sistémico de Duolingo — Diagrama (elaboración propia)</div>
+      </div>
+
+      <div class="divider-label">Componentes del sistema Duolingo — TGS</div>
+      <div class="system-diagram">
+        <div class="sys-col entrada">
+          <span class="sys-icon">📥</span>
+          <h5>Entradas</h5>
+          <p>Datos del usuario: historial, errores, tiempo de respuesta, nivel inicial, idioma meta</p>
+        </div>
+        <div class="sys-arrow">→</div>
+        <div class="sys-col proceso">
+          <span class="sys-icon">⚙️</span>
+          <h5>Procesos</h5>
+          <p>Algoritmos de repetición espaciada (SRS), modelos ML de predicción de olvido, gamificación adaptativa</p>
+        </div>
+        <div class="sys-arrow">→</div>
+        <div class="sys-col salida">
+          <span class="sys-icon">📤</span>
+          <h5>Salidas</h5>
+          <p>Fluidez progresiva en el idioma, certificados, rachas de aprendizaje, retención a largo plazo</p>
+        </div>
+        <div class="sys-arrow">↩</div>
+        <div class="sys-col retro">
+          <span class="sys-icon">🔁</span>
+          <h5>Retroalim.</h5>
+          <p>Corrección inmediata, puntuaciones, notificaciones, ajuste del nivel de dificultad en tiempo real</p>
+        </div>
+        <div class="sys-arrow">≈</div>
+        <div class="sys-col entorno">
+          <span class="sys-icon">🌍</span>
+          <h5>Entorno</h5>
+          <p>Comunidad global de 500M+ usuarios, cultura meta, mercado laboral, ecosistema educativo digital</p>
+        </div>
+      </div>
+
+      <div class="divider-label">Análisis de Sinergia — Sistema Duolingo</div>
+      <div class="synergy-box">
+        <h4>⚡ Sinergia:</h4>
+        <p>
+          Duolingo es el ejemplo paradigmático del principio de totalidad de la TGS aplicado a la tecnología educativa. Analizado de forma aislada, ninguno de sus componentes produce el fenómeno de aprendizaje que genera el sistema completo:
+        </p>
+        <p>
+          ¿Dónde ocurre la sinergia en este sistema? La sinergia ocurre en el Proceso de Transformación, específicamente cuando el algoritmo de Duolingo combina al mismo tiempo los datos del usuario, sus respuestas correctas e incorrectas, el tiempo de práctica y la información sobre su progreso. Ninguna de estas entradas por sí sola genera aprendizaje real, pero cuando el algoritmo las procesa todas juntas, personaliza las lecciones, refuerza los temas débiles, gamifica la experiencia y adapta el contenido en tiempo real. Ese resultado es algo que ninguna entrada podría producir de forma individual.
+          Conectando con Bertalanffy, esto es exactamente lo que la TGS define como sinergia: el todo es más que la suma de sus partes. El usuario que se equivoca, el sistema que detecta el error, y la retroalimentación que ajusta la dificultad forman juntos un ciclo de aprendizaje continuo que ninguno de los tres generaría por separado. Además, como se ve en el dibujo, el sistema está rodeado por un entorno activo (competencia, políticas educativas, comunidad global) lo que confirma que Duolingo es un sistema abierto, otro principio fundamental de la TGS, que intercambia constantemente información con su entorno para evolucionar y mejorar.
+        </p>
+        <p>
+          La <strong>sinergia emerge</strong> cuando gamificación + algoritmos de Big Data + lingüística aplicada + comunidad global <em>interactúan simultáneamente</em>. El resultado —una plataforma que ha logrado que millones de personas aprendan idiomas de forma sostenida— es cualitativamente superior a lo que cualquiera de estas partes podría lograr en aislamiento. Eso es precisamente la sinergia sistémica.
+        </p>
+        <div class="cite-dark">
+          "El todo es más que la suma de sus partes. Lo que llamamos sistema tiene propiedades emergentes que ninguno de sus componentes posee individualmente." — Ludwig von Bertalanffy, <em>Teoría General de los Sistemas</em> (1968). Fondo de Cultura Económica.
+        </div>
+      </div>
+
+      <div class="info-box blue">
+        <strong>🔗 Bertalanffy y la educación tecnológica</strong>
+        Ludwig von Bertalanffy (1901–1972), biólogo y filósofo austriaco, propuso en su obra <em>General System Theory</em> (1968) que los principios sistémicos son universalmente aplicables más allá de la biología. Su principio de <strong>totalidad</strong> establece que el comportamiento de un sistema no puede explicarse únicamente a partir del análisis de sus partes aisladas. En Duolingo, la experiencia de aprendizaje que experimenta el usuario no existiría sin la articulación de todos sus subsistemas en simultaneidad.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ SECCIÓN 4 ══ -->
+  <div class="section-block" id="s4">
+    <div class="section-header">
+      <div class="section-number n4">4</div>
+      <div class="section-title">
+        Reflexiones Individuales
+        <small>Análisis personal de cada integrante del equipo</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="reflection-grid">
+
+        <!-- GABRIEL -->
+        <div class="reflection-card">
+          <div class="reflection-head rh-green">
+            <div class="avatar av-green">🧑</div>
+            <div>
+              <h4>Gabriel Camilo Martin Palacios</h4>
+              <small>Integrante 1 · Reflexiones del parcial</small>
+            </div>
+          </div>
+          <div class="reflection-body">
+            <div class="q-block">
+              <div class="q-num">Pregunta 1 del parcial</div>
+              <p>¿Cómo comprende usted la transición de la Sociedad de la Información hacia la Sociedad del Conocimiento, y qué papel juega la TGS en este proceso?</p>
+              <div class="q-answer">Comprendo la transición de la Sociedad de la Información hacia la Sociedad del Conocimiento como el punto en el que dejamos de manipular la información como simples datos necesarios y lógicos, para comenzar a ver el conocimiento como un valor que nutre nuestra vida y guía al mundo en una mejor dirección. Cuando unimos esa información a nuestras vivencias y le damos un sentido profundo, hallamos sinergias entre nuestras acciones y optimizamos la vida para impulsar a la sociedad. Esta transición implica entender que el estudio y el aprendizaje no son solo un requisito académico, sino una mejor forma de vivir; un proceso donde la TGS nos brinda un soporte fundamental gracias a su estructura propuesta y definida. En definitiva, mientras la información nos da las piezas, es el conocimiento —estructurado a través del pensamiento sistémico— el que nos permite armar un futuro con propósito.</div>
+            </div>
+            <div class="q-block">
+              <div class="q-num">Pregunta 2 del parcial</div>
+              <p>¿Qué implicaciones tiene la Era del Conocimiento para su formación como futuro ingeniero? Argumente con ejemplos concretos.</p>
+              <div class="q-answer">Como futuro ingeniero de sistemas, comprendo que la Era del Conocimiento me exige una rigurosidad superior para mantener mi aprendizaje al día y no ser sobrepasado por el avance tecnológico, especialmente cuando la automatización y la IA ya son recursos básicos. Un ejemplo concreto de esta necesidad es la evolución exponencial de la tecnología, que ha pasado de gestionar simples bytes a procesar terabytes de forma masiva, o el desarrollo de programas capaces de estudiar y optimizar a otros programas automáticamente. Esto implica que mi formación debe ir más allá de la manipulación técnica, requiriendo una comprensión absoluta de la lógica para transformar ese volumen de datos en conocimiento real que guíe a la sociedad en una mejor dirección.</div>
+            </div>
+            <div class="q-block">
+              <div class="q-num">Pregunta 3 del parcial</div>
+              <p>Aplique el concepto de sinergia sistémica a un sistema tecnológico de su elección, diferente a Duolingo. ¿Qué propiedades emergentes identifica?</p>
+              <div class="q-answer">Elegiría un sistema de navegación como Google Maps o Waze, ya que ilustra perfectamente la sinergia sistémica al combinar el software de mapas, los datos satelitales del GPS y, lo más importante, el flujo de datos en tiempo real de millones de conductores. Si aislamos las partes, el GPS es solo una ubicación y el mapa es solo un dibujo estático; sin embargo, cuando todos los componentes interactúan, surge la sinergia donde el sistema "sabe" lo que ocurre en cada calle. Como propiedades emergentes, identifico la predicción exacta del tiempo de llegada y la detección automática de embotellamientos, fenómenos que no residen en el teléfono de un solo usuario, sino que nacen de la suma de todas las partes trabajando juntas; en definitiva, es el sistema completo el que genera una inteligencia colectiva que optimiza el tráfico, algo que ninguno de los elementos podría lograr por sí solo.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JAVIER -->
+        <div class="reflection-card">
+          <div class="reflection-head rh-blue">
+            <div class="avatar av-blue">🧑</div>
+            <div>
+              <h4>Javier Andrés Galeano Chacón</h4>
+              <small>Integrante 2 · Reflexiones del parcial</small>
+            </div>
+          </div>
+          <div class="reflection-body">
+            <div class="q-block">
+              <div class="q-num">Pregunta 1 del parcial</div>
+              <p>¿Cómo comprende usted la transición de la Sociedad de la Información hacia la Sociedad del Conocimiento, y qué papel juega la TGS en este proceso?</p>
+              <div class="q-answer">Antes, con la llegada del internet, simplemente teníamos acceso a muchísima información, pero tenerla no significaba entenderla ni saber usarla. La transición hacia la sociedad del conocimiento ocurre cuando las personas empiezan a procesar esa información, analizarla y aplicarla para resolver problemas reales. Por ejemplo, buscar síntomas en Google es información, pero un médico que interpreta esos síntomas y diagnostica un paciente está generando conocimiento. La TGS entra en este proceso porque nos ayuda a entender que la información no existe sola, sino dentro de sistemas interconectados donde cada parte interactúa con las demás. Según Bertalanffy, estos sistemas tienen entradas, procesos y salidas, y es justamente en el proceso donde la información se transforma en conocimiento útil.</div>
+            </div>
+            <div class="q-block">
+              <div class="q-num">Pregunta 2 del parcial</div>
+              <p>¿Qué implicaciones tiene la Era del Conocimiento para su formación como futuro ingeniero? Argumente con ejemplos concretos.</p>
+              <div class="q-answer">Para mí como futuro ingeniero de sistemas, esta era implica que no basta con memorizar código o fórmulas, sino que debo aprender a transformar datos en soluciones reales. Por ejemplo, cualquier persona hoy puede buscar en YouTube o con ayuda de AI cómo programar, pero un ingeniero debe saber cuándo, por qué y cómo aplicarlo según el contexto del problema. Otra implicación es que debo estar en constante actualización, porque la tecnología cambia muy rápido y lo que aprendo hoy puede quedar obsoleto en pocos años. También implica desarrollar pensamiento crítico, porque en internet hay mucha información incorrecta y saber filtrarla y validarla es una habilidad clave que debo construir desde primer semestre.</div>
+            </div>
+            <div class="q-block">
+              <div class="q-num">Pregunta 3 del parcial</div>
+              <p>Aplique el concepto de sinergia sistémica a un sistema tecnológico de su elección, diferente a Duolingo. ¿Qué propiedades emergentes identifica?</p>
+              <div class="q-answer">Yo elegiría YouTube porque es una plataforma que todos usamos y creo que es fácil ver la sinergia ahí. Si lo pienso bien, YouTube tiene tres partes principales: los youtubers que suben videos, los usuarios que los ven, y el algoritmo que recomienda el contenido. Si uno solo de esos elementos faltara, la plataforma no funcionaría igual. Un youtuber sin espectadores no tendría sentido, un usuario sin algoritmo tendría que buscar manualmente entre millones de videos, y el algoritmo sin gente usándolo no tendría datos para aprender. Pero cuando los tres trabajan juntos es cuando pasan cosas interesantes que ninguno podría lograr solo, y eso es exactamente lo que Bertalanffy llama sinergia. Como propiedades emergentes identifico que los videos se vuelven virales sin que nadie lo planee, que los creadores pueden vivir económicamente de su contenido gracias a la interacción de toda la comunidad, y que se forman comunidades enteras alrededor de un canal, algo que no existiría si solo hubiera videos sin audiencia o audiencia sin contenido. Todo eso nace del sistema completo funcionando junto, no de cada parte por separado.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BIBLIOGRAPHY -->
+  <div class="section-block">
+    <div class="section-header">
+      <div class="section-number" style="background:#888;box-shadow:0 3px 0 #555;">📚</div>
+      <div class="section-title">
+        Referencias Bibliográficas
+        <small>Formato APA 7ª edición</small>
+      </div>
+    </div>
+    <div class="section-body" style="font-size:0.85rem; color:#555; line-height:2;">
+      <p>Bertalanffy, L. von. (1968). <em>General System Theory: Foundations, Development, Applications.</em> George Braziller.</p>
+      <p>Castells, M. (1999). <em>La era de la información: economía, sociedad y cultura (Vol. 1).</em> Siglo XXI Editores.</p>
+      <p>DANE. (2022). <em>Encuesta de Calidad de Vida 2022.</em> Departamento Administrativo Nacional de Estadística. https://www.dane.gov.co</p>
+      <p>Drucker, P. F. (1993). <em>Post-Capitalist Society.</em> HarperBusiness.</p>
+      <p>González, F. (2021). <em>Gestión del conocimiento en organizaciones inteligentes.</em> McGraw-Hill Interamericana.</p>
+      <p>Nonaka, I., & Takeuchi, H. (1995). <em>The Knowledge-Creating Company: How Japanese Companies Create the Dynamics of Innovation.</em> Oxford University Press.</p>
+      <p>OCDE. (2019). <em>Trends Shaping Education 2019.</em> OECD Publishing. https://doi.org/10.1787/trends_edu-2019-en</p>
+      <p>UNESCO. (2005). <em>Hacia las sociedades del conocimiento.</em> Ediciones UNESCO. https://unesdoc.unesco.org/ark:/48223/pf0000141908_spa</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>🦉 <strong>Parcial II: Era del Conocimiento desde la TGS</strong></p>
+  <p style="margin-top:6px">Gabriel Camilo Martin Palacios · Javier Andrés Galeano Chacón · 2026</p>
+  <p style="margin-top:4px; font-size:0.72rem;">Basado en la Teoría General de Sistemas de Ludwig von Bertalanffy (1968)</p>
+</footer>
+
+</body>
+</html>
